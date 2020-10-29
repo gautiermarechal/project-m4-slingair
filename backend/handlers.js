@@ -33,6 +33,7 @@ const getFlight = (req, res) => {
 };
 
 const addReservations = (req, res) => {
+  console.log(req.body);
   let newReservation = { id: uuidv4(), ...req.body };
   let flightTarget = newReservation.flight;
   let seatTarget = newReservation.seat;
@@ -45,6 +46,7 @@ const addReservations = (req, res) => {
         if (seat.id === seatTarget) {
           if (seat.isAvailable) {
             seat.isAvailable = false;
+            console.log("YAYYYY");
             reservations.push(newReservation);
           } else {
             res
@@ -55,7 +57,11 @@ const addReservations = (req, res) => {
       });
     }
   });
-  res.status(200).json({ status: 200, data: newReservation });
+  res.status(201).json({
+    status: 201,
+    message: "Success! New reservation created!",
+    data: newReservation,
+  });
 };
 
 const getReservations = (req, res) => {

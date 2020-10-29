@@ -4,6 +4,7 @@
 const express = require("express");
 const morgan = require("morgan");
 const bodyParser = require("body-parser");
+const cors = require("cors");
 const {
   getFlights,
   getFlight,
@@ -21,6 +22,7 @@ express()
   // This will give us will log more info to the console. see https://www.npmjs.com/package/morgan
   .use(morgan("tiny"))
   .use(bodyParser.json())
+  .use(cors())
 
   // Any requests for static files will go into the public folder
   .use(express.static("public"))
