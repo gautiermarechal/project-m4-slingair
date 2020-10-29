@@ -44,7 +44,7 @@ express()
   .get("/reservations", getReservations)
 
   //Get reservation by id
-  .post("/reservations/:id", getSingleReservation)
+  .get("/reservations/:id", getSingleReservation)
 
   .delete("/reservations/:id", deleteReservation)
 
