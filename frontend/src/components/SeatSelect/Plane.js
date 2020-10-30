@@ -67,6 +67,7 @@ const Placeholder = styled.div`
 
 const Wrapper = styled.ol`
   display: grid;
+  overflow: scroll;
   grid-template-rows: repeat(10, 30px);
   grid-template-columns: 30px 30px 60px 30px 30px 30px;
   gap: 12px 10px;

@@ -46,7 +46,6 @@ const addReservations = (req, res) => {
         if (seat.id === seatTarget) {
           if (seat.isAvailable) {
             seat.isAvailable = false;
-            console.log("YAYYYY");
             reservations.push(newReservation);
           } else {
             res
